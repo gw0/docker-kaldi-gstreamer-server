@@ -1,8 +1,8 @@
 FROM debian:9
 MAINTAINER Eduardo Silva <zedudu@gmail.com>
 
-RUN apt-get update && apt-get install -y  \
-    procps
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    procps \
     autoconf \
     automake \
     bzip2 \
@@ -14,10 +14,9 @@ RUN apt-get update && apt-get install -y  \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-ugly  \
-    libatlas3-base \
     libgstreamer1.0-dev \
     libtool-bin \
-    make -j $(nproc) \
+    make \
     python2.7 \
     python3 \
     python-pip \
